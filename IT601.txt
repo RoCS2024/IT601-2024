@@ -1,3 +1,9 @@
 Subject: ITE61
 Schedule: Saturday 8am to 10am
+<<<<<<< Updated upstream
 Roque, Joshua N.
+=======
+JovenDigo
+Aiah Nadine Delos Reyes
+Roque, Joshua
+>>>>>>> Stashed changes
