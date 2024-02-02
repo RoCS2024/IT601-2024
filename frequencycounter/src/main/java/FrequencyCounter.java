@@ -2,15 +2,15 @@ package main.java;
 
 import java.util.Scanner;
 
-public class FrequencyCounter {
+public class frequencycounter {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter a number series: ");
-        String numSeries = sc.nextLine();
+        int numSeries = sc.nextInt();
 
         System.out.print("Enter which number to count: ");
-        char numCount = sc.next().charAt(0);
+        int numCount = sc.nextInt();
 
         int frequency = countFrequency(numSeries, numCount);
 
@@ -19,14 +19,14 @@ public class FrequencyCounter {
         sc.close();
     }
 
-    // Function to count the frequency of a number in a series
-    public static int countFrequency(String series, char target) {
+    public static int countFrequency(int numberSeries, int target) {
         int frequency = 0;
 
-        for (int i = 0; i < series.length(); i++) {
-            if (series.charAt(i) == target) {
+        while (numberSeries > 0) {
+            if (numberSeries % 10 == target) {
                 frequency++;
             }
+            numberSeries /= 10;
         }
 
         return frequency;
