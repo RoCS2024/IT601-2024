@@ -1,0 +1,19 @@
+package com.it501.laboratory.activities;
+
+import java.util.Scanner;
+
+class reverse {
+	public static void main(String[] args) {
+	int num, reverse = 0;
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter a Number: ");
+	num = sc.nextInt();
+	int digit;
+	while(num !=0){
+	digit = num % 10;
+	reverse = reverse * 10 + digit;
+	num/=10;
+	}
+	System.out.println("reverse: " + reverse);
+	}
+}
