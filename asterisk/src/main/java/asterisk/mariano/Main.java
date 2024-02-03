@@ -3,23 +3,16 @@ package main.java.asterisk.mariano;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
 
-        String word;
-        char character;
+            System.out.println("Enter a string: ");
+            String word = sc.nextLine();
 
-        System.out.println("Enter a string: ");
-        word = sc.nextLine();
-        System.out.println("Enter a character: ");
-        character = sc.nextLine().charAt(0);
+            System.out.println("Enter a character: ");
+            char character = sc.nextLine().charAt(0);
+            String newString = word.replace(character, '*');
 
-        switch (Character.toLowerCase(character)) {
-            case 't':
-                System.out.println("New String: " + word.replace('t', '*'));
-                break;
-            default:
-                System.out.println("New String: " + word);
+            System.out.println("New String: " + newString);
         }
-    }
 }
