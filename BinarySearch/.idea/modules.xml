@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Frequencycounter.iml" filepath="$PROJECT_DIR$/Frequencycounter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BinarySearch.iml" filepath="$PROJECT_DIR$/BinarySearch.iml" />
     </modules>
   </component>
 </project>
