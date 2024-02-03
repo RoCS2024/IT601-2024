@@ -26,6 +26,13 @@ public class Main {
             // Calculate total head movement using FCFS algorithm
             int totalHeadMovement = calculateFCFS(requests, initialHead);
 
+            System.out.println("Order of tasks in FCFS: ");
+            for (int task : requests) {
+                System.out.print(task + " ");
+            }
+
+
+
             System.out.println("Total head movement using FCFS: " + totalHeadMovement);
 
         } catch (Exception e) {
