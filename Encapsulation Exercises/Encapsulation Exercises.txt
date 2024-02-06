@@ -1,0 +1,45 @@
+Encapsulation Exercises.
+
+Instructions:
+1. select the activity number you wanted to be assigned to you. 
+2. create an application using intellij idea IDE
+3. the application should have a text-based interface in Main class in order to test and run the application
+4. codes shall be checked in to the IT601-2024/Encapsulation Exercises folder of the repo.
+5. codes shall be for code review on or before February 8, 2024 at 8:00 pm
+
+1. Create a Circle class that can compute the area and circumference of an instance of a circle.
+
+2. Create a Rectangle class that can compute the area and perimeter of an instance of a rectangle.
+
+3. Create a PublicVehicle class that computes the fare of a passenger depending on the distance covered by the passenger's travel. The first 5 kilometer travelled amounts to 9.00 while an additional cost of 1.00 is given per exceeding kilometer.
+
+4. Write a BankAccount class that can accomodate services such as withdraw and deposit.
+
+5. Construct a Television class that can change channels, change volume and be turned on or off.
+
+6. Create a Cellphone class that:
+ - can be loaded with prepaid loads
+ - deducts load when a call or text is made
+
+7. Design a Temperature class that converts degree Celsius to degree Fahrenheit and vice versa.
+
+8. Create a Binary class that can convert a given binary value to hexadecimal, octal or decimal.
+
+9. Construct an Elevator class that sets the maximum number of floors it can service in a building, current floor it is in, the direction (up, down or still) and if it is working or not. Also, use an array field to identify the current floors the elevator passengers need to go to.
+
+10. Write a MusicPlayer class that can contain a playlist of songs (using an array or list), can add or remove a song from the playlist and can play a song in the playlist. 
+
+11. Create a HotelRoom class that can be booked and/or cancelled reservations (no reservation date and time needed) and calculates the amount the client needs to pay considering that a whole day of stay in the room costs 1250 Php per peron.
+
+12. Create a MovieTheatre class that can accomodate viewers on a certain capacity, identify what movie is currently being played, and can calculate how much the movie has made for a single show.
+
+13. Write CalculatorUtility class that can compute for the avarage of 5 numbers as well as the smallest and largest among the numbers.
+
+14. Create a QuadraticFormulaSimulator class that can compute for the two roots of a quadratic equation using getRoot1 and getRoot2 methods.
+
+15. Create a CurrencyConverter class that converts at least 3 currencies.   
+
+16. Construct a StringUtility class that can reverse a string and count the number or words in a string/phrase.
+  
+17. Create a class named Box with three attributes – width, height, and depth. Also, define a method that returns the volume of the box and another method that tells whether the box is a perfect cube or not.
+
