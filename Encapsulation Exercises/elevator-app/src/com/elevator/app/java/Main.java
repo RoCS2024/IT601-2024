@@ -26,17 +26,11 @@ public class Main {
             return;
         }
 
-        System.out.println("Enter the direction of the elevator (up, down, or still):");
+        System.out.println("Enter the direction of the elevator (up, or down):");
         String direction = scanner.nextLine().toLowerCase();
-        while (!direction.equals("up") && !direction.equals("down") && !direction.equals("still")) {
-            System.out.println("Invalid direction! Please enter 'up', 'down', or 'still':");
+        while (!direction.equals("up") && !direction.equals("down")) {
+            System.out.println("Invalid direction! Please enter 'up', or 'down':");
             direction = scanner.nextLine().toLowerCase();
-        }
-
-        if (direction.equals("still")) {
-            System.out.println("Elevator is still on floor " + elevator.getCurrentFloor());
-            scanner.close();
-            return;
         }
 
         System.out.println("Enter passenger destination:");
