@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int maxFloors = (int) (Math.random() * 41) + 10; // Random value between 10 and 50
-        int currentFloor = (int) (Math.random() * maxFloors) + 1; // Random value between 1 and maxFloors
-        boolean working = Math.random() < 0.5; // Random boolean value
+        int maxFloors = (int) (Math.random() * 41) + 10;
+        int currentFloor = (int) (Math.random() * maxFloors) + 1;
+        boolean working = Math.random() < 0.5;
 
         Elevator elevator = new Elevator();
         elevator.setMaxFloors(maxFloors);
