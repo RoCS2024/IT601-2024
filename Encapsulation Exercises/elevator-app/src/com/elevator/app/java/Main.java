@@ -54,7 +54,7 @@ public class Main {
             }
         }
         elevator.setDirection(direction);
-        elevator.setPassengerDestinations(new int[]{destination});
+        elevator.setPassengerDestinations(destination);
 
         System.out.println("Floors the elevator would go through:");
         if (elevator.getCurrentFloor() < destination) {
