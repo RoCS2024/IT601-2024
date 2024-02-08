@@ -66,8 +66,5 @@ public class Main {
                 System.out.print(floor + " ");
             }
         }
-        System.out.println();
-
-        scanner.close();
     }
 }
