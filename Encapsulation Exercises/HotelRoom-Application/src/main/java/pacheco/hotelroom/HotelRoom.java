@@ -2,37 +2,34 @@ package main.java.pacheco.hotelroom;
 
 public class HotelRoom {
     private boolean isBooked;
-    private int costPerPerson;
+    private double costPerPerson;
     private int numberOfPerson;
     private int numberOfDay;
-    private int totalAmount;
 
     public HotelRoom () {
 
     }
 
-    public HotelRoom(boolean isBooked, int costPerPerson, int numberOfPerson, int numberOfDay, int totalAmount) {
+    public HotelRoom(boolean isBooked, double costPerPerson, int numberOfPerson, int numberOfDay) {
         this.isBooked = isBooked;
         this.costPerPerson = costPerPerson;
         this.numberOfPerson = numberOfPerson;
         this.numberOfDay = numberOfDay;
-        this.totalAmount = totalAmount;
     }
 
     public void setBooked(boolean isBooked) {
-        if (isBooked) this.isBooked = true;
-        else this.isBooked = false;
+        this.isBooked = isBooked;
     }
 
     public boolean getIsBooked() {
         return this.isBooked;
     }
 
-    public void setCostPerPerson (int costPerPerson) {
+    public void setCostPerPerson (double costPerPerson) {
         this.costPerPerson = costPerPerson;
     }
 
-    public int getCostPerPerson () {
+    public double getCostPerPerson () {
         return this.costPerPerson;
     }
 
@@ -52,19 +49,11 @@ public class HotelRoom {
         return this.numberOfDay;
     }
 
-    public void setTotalAmount (int totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    public int getTotalAmount () {
-        return this.totalAmount;
-    }
-
      public void cancelReservation () {
         this.isBooked = false;
      }
 
-     public void calculateTotalAmount () {
-        totalAmount = (this.numberOfPerson * this.costPerPerson) * this.numberOfDay;
+    public double calculateTotalAmount() {
+        return (this.numberOfPerson * this.costPerPerson) * this.numberOfDay;
     }
 }
