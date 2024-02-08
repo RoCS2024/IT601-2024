@@ -1,32 +1,35 @@
-import java.util.Scanner;
+class TemperatureConverter {
+    private double value;
+    private String currentTemperatureUnit;
+    public TemperatureConverter() {
+        this.value = 0.0;
+    }
 
-public class TemperatureConverter {
+    public TemperatureConverter(double celsius) {
+        this.value = celsius;
+    }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public double getCelsius() {
+        return value;
+    }
 
-        System.out.print("Enter the temperature value: ");
-        double temperatureValue = scanner.nextDouble();
+    public double getFahrenheit() {
+        return celsiusToFahrenheit();
+    }
 
-        System.out.print("Enter the current temperature unit (C for Celsius, F for Fahrenheit): ");
-        char currentUnit = scanner.next().charAt(0);
+    public void setCelsius(double celsius) {
+        this.value = celsius;
+    }
 
-        Temperature_Converter temperatureConverter;
+    public void setFahrenheit(double fahrenheit) {
+        this.value = fahrenheitToCelsius(fahrenheit);
+    }
 
-        if (currentUnit == 'C' || currentUnit == 'c') {
-            temperatureConverter = new Temperature_Converter(temperatureValue);
-        } else if (currentUnit == 'F' || currentUnit == 'f') {
-            temperatureConverter = new Temperature_Converter();
-            temperatureConverter.setFahrenheit(temperatureValue);
-        } else {
-            System.out.println("Invalid temperature unit. Please enter C or F.");
-            return;
-        }
+    public double celsiusToFahrenheit() {
+        return (value * 9 / 5) + 32;
+    }
 
-        double celsiusValue = temperatureConverter.getCelsius();
-        double fahrenheitValue = temperatureConverter.getFahrenheit();
-
-        System.out.println("Entered temperature: " + temperatureValue + " " + (currentUnit == 'C' || currentUnit == 'c' ? "Celsius" : "Fahrenheit"));
-        System.out.println("Converted temperature: " + celsiusValue + " Celsius is equal to " + fahrenheitValue + " Fahrenheit");
+    public double fahrenheitToCelsius(double fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
     }
 }
