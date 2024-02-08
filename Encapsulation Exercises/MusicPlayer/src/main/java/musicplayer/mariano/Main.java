@@ -10,9 +10,10 @@ public class Main {
         player.addSong(new Song("Shut Down", "Blackpink"));
         player.addSong(new Song("Radio", "Lana Del Rey"));
         player.addSong(new Song("Flowers", "Miley Cyrus"));
+        player.addSong(new Song("Cardigan", "Taylor Swift"));
 
         while (true) {
-            System.out.println("\n1. Add Song\n2. Remove Song\n3. Play Song\n4. Display Playlist\n5. Exit");
+            System.out.println("\n1. Add Song\n2. Remove Song\n3. Play Song\n4. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // another line
@@ -26,19 +27,20 @@ public class Main {
                     player.addSong(new Song(title, artist));
                     break;
                 case 2:
+                    player.displayPlaylist();
                     System.out.print("Enter song title to remove: ");
                     String removeTitle = scanner.nextLine();
                     player.removeSong(removeTitle);
+                    System.exit(0);
                     break;
                 case 3:
+                    player.displayPlaylist();
                     System.out.print("Enter song title to play: ");
                     String playTitle = scanner.nextLine();
                     player.playSong(playTitle);
+                    System.exit(0);
                     break;
                 case 4:
-                    player.displayPlaylist();
-                    break;
-                case 5:
                     System.out.println("Stop playing...");
                     System.exit(0);
                     break;

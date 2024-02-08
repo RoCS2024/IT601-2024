@@ -6,12 +6,17 @@ class Song {
     private String title;
     private String artist;
 
+    //Constructor
+    public Song (){
+    }
+    //Constructor with parameter
     public Song(String title, String artist) {
         this.title = title;
         this.artist = artist;
     }
-
+//getter and setters
     public String getTitle() {
+
         return title;
     }
     public void setTitle(String title) {
@@ -25,7 +30,7 @@ class Song {
     }
     @Override
     public String toString() {
-        return "'" + title + "' by " + artist;
+        return "" + title + " by " + artist;
     }
 }
 
