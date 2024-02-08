@@ -1,24 +1,26 @@
 package com.elevator.app.java;
 
-import java.util.InputMismatchException;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Random random = new Random();
-        int maxFloors = random.nextInt(50) + 10;
-        int currentFloor = random.nextInt(maxFloors) + 1;
-        boolean working = random.nextBoolean();
+        int maxFloors = (int) (Math.random() * 41) + 10; // Random value between 10 and 50
+        int currentFloor = (int) (Math.random() * maxFloors) + 1; // Random value between 1 and maxFloors
+        boolean working = Math.random() < 0.5; // Random boolean value
+
+        Elevator elevator = new Elevator();
+        elevator.setMaxFloors(maxFloors);
+        elevator.setCurrentFloor(currentFloor);
+        elevator.setWorking(working);
 
         System.out.println("Default values of the elevator:");
-        System.out.println("Max floors: " + maxFloors);
-        System.out.println("Current floor: " + currentFloor);
-        System.out.println("Working: " + working);
+        System.out.println("Max floors: " + elevator.getMaxFloors());
+        System.out.println("Current floor: " + elevator.getCurrentFloor());
+        System.out.println("Working: " + elevator.isWorking());
 
-        if (!working) {
+        if (!elevator.isWorking()) {
             System.out.println("The elevator is not currently working. Please try again later.");
             scanner.close();
             return;
@@ -26,56 +28,51 @@ public class Main {
 
         System.out.println("Enter the direction of the elevator (up, down, or still):");
         String direction = scanner.nextLine().toLowerCase();
-
         while (!direction.equals("up") && !direction.equals("down") && !direction.equals("still")) {
             System.out.println("Invalid direction! Please enter 'up', 'down', or 'still':");
             direction = scanner.nextLine().toLowerCase();
         }
 
-        System.out.println("Enter passenger destination:");
-        int destination = scanner.nextInt();
-        if (destination == currentFloor) {
-            System.out.println("Floors the elevator would go through: " + currentFloor);
+        if (direction.equals("still")) {
+            System.out.println("Elevator is still on floor " + elevator.getCurrentFloor());
             scanner.close();
             return;
         }
 
-        int[] passengerDestinations = new int[1];
-        boolean validInput = false;
-        while (!validInput) {
+        System.out.println("Enter passenger destination:");
+        int destination = 0;
+        boolean validDestination = false;
+        while (!validDestination) {
+            String input = scanner.nextLine();
             try {
-                if ((direction.equals("up") || destination == currentFloor) && destination < currentFloor) {
+                destination = Integer.parseInt(input);
+                if (direction.equals("up") && destination < currentFloor) {
                     System.out.println("Invalid destination! Destination must be higher than or equal to current floor.");
-                } else if (direction.equals("down") && destination >= currentFloor) {
-                    System.out.println("Invalid destination! Destination must be lower than current floor.");
+                } else if (direction.equals("down") && destination > currentFloor) {
+                    System.out.println("Invalid destination! Destination must be lower than or equal to current floor.");
                 } else if (destination <= 0 || destination > maxFloors) {
                     System.out.println("Invalid destination! Please enter a number between 1 and " + maxFloors + ":");
                 } else {
-                    passengerDestinations[0] = destination;
-                    validInput = true;
+                    validDestination = true;
                 }
-            } catch (InputMismatchException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Invalid input! Please enter a valid number.");
-                scanner.nextLine();
             }
         }
+        elevator.setDirection(direction);
+        elevator.setPassengerDestinations(new int[]{destination});
 
-        if (currentFloor == passengerDestinations[0]) {
-            System.out.println("Floors the elevator would go through: " + currentFloor);
-        } else {
-            System.out.println("Floors the elevator would go through:");
-            int destinationFloor = passengerDestinations[0];
-            if (currentFloor < destinationFloor) {
-                for (int floor = currentFloor; floor <= destinationFloor; floor++) {
-                    System.out.print(floor + " ");
-                }
-            } else {
-                for (int floor = currentFloor; floor >= destinationFloor; floor--) {
-                    System.out.print(floor + " ");
-                }
+        System.out.println("Floors the elevator would go through:");
+        if (elevator.getCurrentFloor() < destination) {
+            for (int floor = elevator.getCurrentFloor(); floor <= destination; floor++) {
+                System.out.print(floor + " ");
             }
-            System.out.println();
+        } else {
+            for (int floor = elevator.getCurrentFloor(); floor >= destination; floor--) {
+                System.out.print(floor + " ");
+            }
         }
+        System.out.println();
 
         scanner.close();
     }

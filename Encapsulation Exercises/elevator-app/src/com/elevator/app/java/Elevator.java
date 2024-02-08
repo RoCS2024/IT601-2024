@@ -15,6 +15,10 @@ public class Elevator {
         this.passengerDestinations = passengerDestinations;
     }
 
+    public Elevator() {
+
+    }
+
     public int getMaxFloors() {
         return maxFloors;
     }
