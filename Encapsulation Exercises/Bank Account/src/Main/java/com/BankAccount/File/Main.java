@@ -1,6 +1,7 @@
 package Main.java.com.BankAccount.File;
 
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -18,7 +19,6 @@ public class Main {
 
         BankAccount myAccount = new BankAccount(accountNumber, accountHolderName, pin);
 
-
         int option = 0;
         do {
             System.out.println("\nChoose an option:");
@@ -33,15 +33,29 @@ public class Main {
                 case 1: {
                     System.out.println("Enter amount to deposit:");
                     double amount = sc.nextDouble();
-                    myAccount.deposit(amount);
+                    if (amount > 0) {
+                        myAccount.deposit(amount);
+                        System.out.println("Deposit successful. New balance: " + myAccount.getBalance());
+                    } else {
+                        System.out.println("Invalid amount for deposit.");
+                    }
                     break;
                 }
                 case 2: {
                     System.out.println("Enter amount to withdraw:");
                     double amount = sc.nextDouble();
-                    System.out.println("Enter your PIN:");
-                    String enteredPin = sc.next();
-                    myAccount.withdraw(amount, enteredPin);
+                    if (amount > 0 && amount <= myAccount.getBalance()) {
+                        System.out.println("Enter your PIN:");
+                        String enteredPin = sc.next();
+                        if (enteredPin.equals(pin)) {
+                            myAccount.withdraw(amount);
+                            System.out.println("Withdrawal successful. New balance: " + myAccount.getBalance());
+                        } else {
+                            System.out.println("Invalid PIN.");
+                        }
+                    } else {
+                        System.out.println("Invalid amount for withdrawal.");
+                    }
                     break;
                 }
                 case 3: {
