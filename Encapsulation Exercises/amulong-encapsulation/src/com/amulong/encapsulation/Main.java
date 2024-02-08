@@ -7,10 +7,23 @@ public class Main {
         CurrencyConverter converter = new CurrencyConverter();
 
         Scanner scanner = new Scanner(System.in);
+        double amount;
 
-        System.out.print("Enter the amount: ");
-        double amount = scanner.nextDouble();
-        converter.setValue(amount);
+        while (true) {
+            System.out.print("Enter the amount: ");
+            if (scanner.hasNextDouble()) {
+                amount = scanner.nextDouble();
+                if (amount >= 0) {
+                    converter.setValue(amount);
+                    break;
+                } else {
+                    System.out.println("Please enter a non-negative value.");
+                }
+            } else {
+                System.out.println("Invalid input. Please enter a valid numeric value.");
+                scanner.next(); // consume the invalid input
+            }
+        }
 
         System.out.println("Choose the currency to convert from: ");
         System.out.println("1. EURO");
