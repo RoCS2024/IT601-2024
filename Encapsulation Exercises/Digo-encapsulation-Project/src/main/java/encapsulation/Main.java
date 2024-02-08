@@ -10,49 +10,36 @@ public class Main {
         double height = 0;
         double depth = 0;
 
-        boolean validInput = false;
-        while (!validInput) {
+        Box box1 = new Box(0, 0, 0);
+
+        boolean validInput = true;
+        while (validInput) {
             try {
                 System.out.println("Enter width of the box:");
                 width = Double.parseDouble(scanner.nextLine());
                 if (width <= 0) {
-                    System.out.println("Width must be a positive number.");
+                    throw new IllegalArgumentException("Width must be a positive number.");
                 }
-                validInput = true;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Invalid Input. Use Number!");
-            }
-        }
 
-        validInput = false;
-        while (!validInput) {
-            try {
                 System.out.println("Enter height of the box:");
                 height = Double.parseDouble(scanner.nextLine());
                 if (height <= 0) {
-                    System.out.println("Height must be a positive number.");
+                    throw new IllegalArgumentException("Height must be a positive number.");
                 }
-                validInput = true;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Invalid Input. Use Number!");
-            }
-        }
 
-        validInput = false;
-        while (!validInput) {
-            try {
                 System.out.println("Enter depth of the box:");
                 depth = Double.parseDouble(scanner.nextLine());
                 if (depth <= 0) {
-                    System.out.println("Depth must be a positive number.");
+                    throw new IllegalArgumentException("Depth must be a positive number.");
                 }
-                validInput = true;
+
+                validInput = false;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input! Please enter a valid number.");
             } catch (IllegalArgumentException e) {
-                System.out.println("Invalid Input. Use Number!");
+                System.out.println(e.getMessage());
             }
         }
-
-        Box box1 = new Box(0, 0, 0);
 
         box1.setWidth(width);
         box1.setHeight(height);
