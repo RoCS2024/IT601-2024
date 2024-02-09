@@ -7,31 +7,19 @@ public class Cellphone {
 
     public void loadPrepaid(double amount) {
         prepaidLoad += amount;
-        System.out.println("Prepaid load of $" + amount + " added successfully. Current balance: ₱" + prepaidLoad);
+        System.out.println("Prepaid load of ₱" + amount + " added successfully. Current balance: ₱" + prepaidLoad);
     }
 
-    public boolean makeCall(double minutes) {
+    public void makeCall(double minutes) {
         double callCost = minutes * 5;
-        if (prepaidLoad >= callCost) {
-            prepaidLoad -= callCost;
-            System.out.println("Call made for " + minutes + " minutes. Remaining balance: ₱" + prepaidLoad);
-            return true;
-        } else {
-            System.out.println("Insufficient balance. Please load more prepaid credits.");
-            return false;
-        }
+        prepaidLoad -= callCost;
+        System.out.println("Call made for " + minutes + " minutes. Remaining balance: ₱" + prepaidLoad);
     }
 
-    public boolean sendText() {
+    public void sendText() {
         double textCost = 1;
-        if (prepaidLoad >= textCost) {
-            prepaidLoad -= textCost;
-            System.out.println("Text message sent. Remaining balance: ₱" + prepaidLoad);
-            return true;
-        } else {
-            System.out.println("Insufficient balance. Please load more prepaid credits.");
-            return false;
-        }
+        prepaidLoad -= textCost;
+        System.out.println("Text message sent. Remaining balance: ₱" + prepaidLoad);
     }
 
     public double getPrepaidLoad() {
