@@ -36,6 +36,7 @@ class MovieTheatre {
         System.out.print("Enter the movie title: ");
         String movieTitle = scanner.nextLine();
 
+<<<<<<< HEAD
         int capacity;
         do {
             System.out.print("Enter the capacity of the theatre: ");
@@ -47,11 +48,19 @@ class MovieTheatre {
             System.out.print("Enter the ticket price: $");
             ticketPrice = getValidDoubleInput(scanner);
         } while (ticketPrice <= 0.0);
+=======
+        System.out.print("Enter the capacity of the theatre: ");
+        int capacity = scanner.nextInt();
+
+        System.out.print("Enter the ticket price: ");
+        double ticketPrice = scanner.nextDouble();
+>>>>>>> cb04f42be17fc86fa32ed0419b594ebae6a1f16a
 
         MovieTheatre theatre = new MovieTheatre(movieTitle, capacity, ticketPrice);
 
         theatre.playMovie();
 
+<<<<<<< HEAD
         boolean continueAdmitting = true;
         while (continueAdmitting) {
             System.out.print("Enter the number of viewers to admit (enter a negative value or 0 to start the movie): ");
@@ -64,6 +73,13 @@ class MovieTheatre {
                     theatre.admitViewer();
                 }
             }
+=======
+        System.out.print("Enter the number of viewers to admit: ");
+        int numberOfViewersToAdmit = scanner.nextInt();
+
+        for (int i = 0; i < numberOfViewersToAdmit; i++) {
+            theatre.admitViewer();
+>>>>>>> cb04f42be17fc86fa32ed0419b594ebae6a1f16a
         }
 
         double revenue = theatre.calculateRevenue();
@@ -71,6 +87,7 @@ class MovieTheatre {
 
         scanner.close();
     }
+<<<<<<< HEAD
 
     private static int getValidIntInput(Scanner scanner) {
         while (!scanner.hasNextInt()) {
@@ -88,3 +105,6 @@ class MovieTheatre {
         return scanner.nextDouble();
     }
 }
+=======
+}
+>>>>>>> cb04f42be17fc86fa32ed0419b594ebae6a1f16a
