@@ -1,5 +1,6 @@
 package main.java.encapsulation;
 
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,49 +11,59 @@ public class Main {
         double height = 0;
         double depth = 0;
 
-        Box box1 = new Box(0, 0, 0);
+        boolean validInput;
 
-        boolean validInput = true;
+        validInput = true;
         while (validInput) {
-            System.out.println("Enter width of the box:");
-            String widthInput = scanner.nextLine();
-            if (!isValidNumber(widthInput)) {
-                System.out.println("Width must be a valid number.");
-                continue;
-            } else if (Double.parseDouble(widthInput) <= 0) {
-                System.out.println("Width must be a positive number.");
+            System.out.print("Enter width of the box:");
+            if (scanner.hasNextDouble()) {
+                width = scanner.nextDouble();
+                if (width <= 0) {
+                    System.out.println("Width must be a positive number.");
+                    continue;
+                }
+
+
+            } else {
+                System.out.println("Invalid input. Please enter a valid number for width.");
+                scanner.next();
                 continue;
             }
-            width = Double.parseDouble(widthInput);
 
-            System.out.println("Enter height of the box:");
-            String heightInput = scanner.nextLine();
-            if (!isValidNumber(heightInput)) {
-                System.out.println("Height must be a valid number.");
+
+            System.out.print("Enter height of the box:");
+            if (scanner.hasNextDouble()) {
+                height = scanner.nextDouble();
+                if (height <= 0) {
+                    System.out.println("Height must be a positive number.");
+                    continue;
+                }
+
+            } else {
+                System.out.println("Invalid input. Please enter a valid number for height.");
+                scanner.next();
                 continue;
-            } else if (Double.parseDouble(heightInput) <= 0) {
-                System.out.println("Height must be a positive number.");
-                continue;
+
             }
-            height = Double.parseDouble(heightInput);
 
-            System.out.println("Enter depth of the box:");
-            String depthInput = scanner.nextLine();
-            if (!isValidNumber(depthInput)) {
-                System.out.println("Depth must be a valid number.");
-                continue;
-            } else if (Double.parseDouble(depthInput) <= 0) {
-                System.out.println("Depth must be a positive number.");
-                continue;
+            System.out.print("Enter depth of the box:");
+            if (scanner.hasNextDouble()) {
+                depth = scanner.nextDouble();
+                if (depth <= 0) {
+                    System.out.println("Depth must be a positive number.");
+                    continue;
+                }
+                validInput = false;
+            } else {
+                System.out.println("Invalid input. Please enter a valid number for depth.");
+                scanner.next();
             }
-            depth = Double.parseDouble(depthInput);
-
-            validInput = false;
         }
 
-        box1.setWidth(width);
-        box1.setHeight(height);
-        box1.setDepth(depth);
+
+
+        Box box1 = new Box(width, height, depth);
+
 
         System.out.println("\nDimensions of box:");
         System.out.println("Width: " + box1.getWidth());
@@ -61,13 +72,9 @@ public class Main {
 
         System.out.println("Volume of box1: " + box1.calculateVolume());
 
+
         System.out.println("Is box a perfect cube? " + box1.isPerfectCube());
 
         scanner.close();
     }
-
-    private static boolean isValidNumber(String input) {
-        return input.matches("^\\d+(\\.\\d+)?$");
-    }
 }
-
