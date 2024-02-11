@@ -2,69 +2,46 @@ package main.java.musicplayer.mariano;
 
 import java.util.ArrayList;
 import java.util.List;
-class Song {
-    private String title;
-    private String artist;
-
-    //Constructor
-    public Song (){
-    }
-    //Constructor with parameter
-    public Song(String title, String artist) {
-        this.title = title;
-        this.artist = artist;
-    }
-//getter and setters
-    public String getTitle() {
-
-        return title;
-    }
-    public void setTitle(String title) {
-        this.title = title;
-    }
-    public String getArtist() {
-        return artist;
-    }
-    public void setArtist(String artist) {
-        this.artist = artist;
-    }
-    @Override
-    public String toString() {
-        return "" + title + " by " + artist;
-    }
-}
 
 public class MusicPlayer {
-    private List<Song> playlist;
+    private List<String> playlist;
+    private String currentSong;
 
     public MusicPlayer() {
         this.playlist = new ArrayList<>();
+        this.currentSong = null;
     }
 
-    public void addSong(Song song) {
-        playlist.add(song);
-        System.out.println("Song added successfully.");
+    public void addSong(String title) {
+        String titleLowerCase = title.toLowerCase();
+        if (playlist.contains(title)) {
+            System.out.println("Song '" + title + "' is already in the playlist.");
+        } else {
+            playlist.add(title);
+            System.out.println("Song added successfully.");
+        }
     }
 
     public void removeSong(String title) {
-        for (Song song : playlist) {
-            if (song.getTitle().equalsIgnoreCase(title)) {
-                playlist.remove(song);
-                System.out.println("Song removed successfully.");
-                return;
+        String titleLowerCase = title.toLowerCase();
+        if (playlist.remove(title)) {
+            if (currentSong != null && currentSong.equalsIgnoreCase(title)) {
+                currentSong = null; // Reset current song if the removed song was the current one
             }
+            System.out.println("Song removed successfully.");
+        } else {
+            System.out.println("Song '" + title + "' not found in the playlist.");
         }
-        System.out.println("Song '" + title + "' not found in the playlist.");
     }
 
     public void playSong(String title) {
-        for (Song song : playlist) {
-            if (song.getTitle().equalsIgnoreCase(title)) {
-                System.out.println("Playing: " + song);
-                return;
-            }
+        String titleLowerCase = title.toLowerCase();
+        if (playlist.contains(title)) {
+            currentSong = title;
+            System.out.println("Playing: " + currentSong);
+        } else {
+            System.out.println("Song '" + title + "' not found in the playlist.");
         }
-        System.out.println("Song '" + title + "' not found in the playlist.");
     }
 
     public void displayPlaylist() {
@@ -72,5 +49,27 @@ public class MusicPlayer {
         for (int i = 0; i < playlist.size(); i++) {
             System.out.println((i + 1) + ": " + playlist.get(i));
         }
+    }
+
+    // Getter for CurrentSong
+    public String getCurrentSong() {
+        if (currentSong != null) {
+            return currentSong;
+        } else {
+            return "No song is currently playing.";
+        }
+    }
+    // Setter for currentSong
+    public void setCurrentSong(String currentSong) {
+        this.currentSong = currentSong;
+    }
+    // Getter for playlist
+    public List<String> getPlaylist() {
+        return playlist;
+    }
+
+    // Setter for playlist
+    public void setPlaylist(List<String> playlist) {
+        this.playlist = playlist;
     }
 }
