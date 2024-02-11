@@ -23,21 +23,33 @@ public class Main {
                 case 1:
                     player.displayPlaylist();
                     System.out.print("Enter song title: ");
-                    String title = scanner.nextLine();
-                    player.addSong(title);
+                    String titleToAdd = scanner.nextLine();
+                    if (!player.getPlaylist().contains(titleToAdd)) {
+                        player.addSong(titleToAdd);
+                    } else {
+                        System.out.println("Song '" + titleToAdd + "' is already in the playlist.");
+                    }
                     break;
                 case 2:
                     player.displayPlaylist();
                     System.out.print("Enter song title to remove: ");
-                    String removeTitle = scanner.nextLine();
-                    player.removeSong(removeTitle);
+                    String titleToRemove = scanner.nextLine();
+                    if (player.getPlaylist().contains(titleToRemove)) {
+                        player.removeSong(titleToRemove);
+                    } else {
+                        System.out.println("Song '" + titleToRemove + "' not found in the playlist.");
+                    }
                     break;
                 case 3:
                     player.displayPlaylist();
                     System.out.print("Enter song title to play: ");
-                    String playTitle = scanner.nextLine();
-                    player.playSong(playTitle);
-                    System.out.println("Currently playing: " + player.getCurrentSong());
+                    String titleToPlay = scanner.nextLine();
+                    if (player.getPlaylist().contains(titleToPlay)) {
+                        player.playSong(titleToPlay);
+                        System.out.println("Currently playing: " + player.getCurrentSong());
+                    } else {
+                        System.out.println("Song '" + titleToPlay + "' not found in the playlist.");
+                    }
                     break;
                 case 4:
                     System.out.println("Stop playing...");
