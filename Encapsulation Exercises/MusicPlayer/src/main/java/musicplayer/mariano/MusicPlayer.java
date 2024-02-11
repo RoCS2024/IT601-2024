@@ -13,17 +13,11 @@ public class MusicPlayer {
     }
 
     public void addSong(String title) {
-        String titleLowerCase = title.toLowerCase();
-        if (playlist.contains(title)) {
-            System.out.println("Song '" + title + "' is already in the playlist.");
-        } else {
-            playlist.add(title);
-            System.out.println("Song added successfully.");
-        }
+        playlist.add(title);
+        System.out.println("Song added successfully.");
     }
 
     public void removeSong(String title) {
-        String titleLowerCase = title.toLowerCase();
         if (playlist.remove(title)) {
             if (currentSong != null && currentSong.equalsIgnoreCase(title)) {
                 currentSong = null; // Reset current song if the removed song was the current one
@@ -35,7 +29,6 @@ public class MusicPlayer {
     }
 
     public void playSong(String title) {
-        String titleLowerCase = title.toLowerCase();
         if (playlist.contains(title)) {
             currentSong = title;
             System.out.println("Playing: " + currentSong);
@@ -51,7 +44,6 @@ public class MusicPlayer {
         }
     }
 
-    // Getter for CurrentSong
     public String getCurrentSong() {
         if (currentSong != null) {
             return currentSong;
@@ -59,16 +51,15 @@ public class MusicPlayer {
             return "No song is currently playing.";
         }
     }
-    // Setter for currentSong
+
     public void setCurrentSong(String currentSong) {
         this.currentSong = currentSong;
     }
-    // Getter for playlist
+
     public List<String> getPlaylist() {
         return playlist;
     }
 
-    // Setter for playlist
     public void setPlaylist(List<String> playlist) {
         this.playlist = playlist;
     }

@@ -22,7 +22,7 @@ public class Main {
             switch (choice) {
                 case 1:
                     player.displayPlaylist();
-                    System.out.print("Enter song title: ");
+                    System.out.print("Enter song title to be added: ");
                     String titleToAdd = scanner.nextLine();
                     if (!player.getPlaylist().contains(titleToAdd)) {
                         player.addSong(titleToAdd);
