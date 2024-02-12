@@ -5,7 +5,7 @@ public class Elevator {
     private int currentFloor;
     private String direction;
     private boolean working;
-    private int[] passengerDestinations = new int[10];
+    private int[] passengerDestinations = new int[100];
 
 
     public Elevator() {

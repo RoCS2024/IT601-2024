@@ -16,13 +16,14 @@ public class Main {
         elevator.setCurrentFloor(currentFloor);
         elevator.setWorking(working);
 
-        System.out.println("Default values of the elevator:");
+        System.out.println("Welcome to the Elevator Simulator!");
+        System.out.println("Current Status:");
         System.out.println("Max floors: " + elevator.getMaxFloors());
         System.out.println("Current floor: " + elevator.getCurrentFloor());
-        System.out.println("Working: " + elevator.isWorking());
+        System.out.println("Working: " + (elevator.isWorking() ? "Yes" : "No"));
 
         if (!elevator.isWorking()) {
-            System.out.println("The elevator is not currently working. Please try again later.");
+            System.out.println("Sorry, the elevator is currently out of service. Please try again later.");
             scanner.close();
             return;
         }
@@ -38,39 +39,42 @@ public class Main {
         boolean validDestination = false;
         int num = 0;
         while (!validDestination) {
-            System.out.println("Enter passenger destination ('done' if finished): ");
+            System.out.println("\nEnter passenger destination floor (1 to " + maxFloors + ") or 'done' to finish:");
+            System.out.println("Current Floor:" + currentFloor);
+            System.out.println("Direction:" + direction);
             String input = scanner.nextLine();
+            if (input.toLowerCase().equals("done")) {
+                validDestination = true;
+                break;
+            }
             try {
                 destination = Integer.parseInt(input);
-                if(destination <= 0){
-                    System.out.println("Please input a value between 1 to " + maxFloors + ":");
-                } else if(destination > maxFloors) {
-                    System.out.println("Please input a value between 1 to " + maxFloors + ":");
+                if (destination < 1 || destination > maxFloors) {
+                    System.out.println("Please input a value between 1 and " + maxFloors + ".");
                 } else {
-                    elevator.setPassengerDestinations(destination,num);
+                    elevator.setPassengerDestinations(destination, num);
                     num++;
                 }
             } catch (NumberFormatException e) {
-                if(input.toLowerCase().equals("done")){
-                    validDestination = true;
-                } else {
-                    System.out.println("Invalid input! Please enter a valid number.");
-                }
+                System.out.println("Invalid input! Please enter a valid number or 'done'.");
             }
         }
         int[] highest = new int[num];
         int[] lowest = new int[num];
         int num2 = 0;
         int num3 = 0;
-        for (int i = 0; i < highest.length; i++) {
-            if(currentFloor <= elevator.getPassengerDestinations(i)){
-                highest[num2] = elevator.getPassengerDestinations(i);
+        for (int i = 0; i < num; i++) {
+            int destinationFloor = elevator.getPassengerDestinations(i);
+            if (currentFloor <= destinationFloor) {
+                highest[num2] = destinationFloor;
                 num2++;
-            } else if(currentFloor >= elevator.getPassengerDestinations(i)){
-                lowest[num3] = elevator.getPassengerDestinations(i);
+            }
+            if (currentFloor >= destinationFloor){
+                lowest[num3] = destinationFloor;
                 num3++;
             }
         }
+
         for (int i = 0; i < num2; i++) {
             for (int j = i + 1; j < num2; j++) {
                 if (highest[i] > highest[j]) {
@@ -89,20 +93,26 @@ public class Main {
                 }
             }
         }
-        if(direction.equals("up")){
-            System.out.println("Floors the elevator would go through:");
-            for (int i = 0; i < num2; i++) {
 
+        System.out.println("Floors chosen by the passengers: ");
+        for (int i = 0; i < num; i++) {
+            System.out.print(elevator.getPassengerDestinations(i) + " ");
+        }
+        System.out.println("\nFloors the elevator will go through, from 1 to " + maxFloors + " floors:");
+        if (direction.equals("up")) {
+            for (int i = 0; i < num2; i++) {
+                if (highest[i] == currentFloor) {
+                    continue;
+                }
                 System.out.print(highest[i] + " ");
             }
             for (int i = 0; i < num3; i++) {
                 System.out.print(lowest[i] + " ");
             }
         } else {
-            System.out.println("Floors the elevator would go through:");
             for (int i = 0; i < num3; i++) {
-                if(lowest[i] == currentFloor){
-                    i++;
+                if (lowest[i] == currentFloor) {
+                    continue;
                 }
                 System.out.print(lowest[i] + " ");
             }
@@ -110,5 +120,7 @@ public class Main {
                 System.out.print(highest[i] + " ");
             }
         }
+        System.out.println("\nCurrent Floor:" + currentFloor);
+        System.out.println("Direction:" + direction);
     }
 }
