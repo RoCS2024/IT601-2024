@@ -3,6 +3,7 @@ package com.elevator.app.java;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -33,37 +34,80 @@ public class Main {
             direction = scanner.nextLine().toLowerCase();
         }
 
-        System.out.println("Enter passenger destination:");
         int destination = 0;
         boolean validDestination = false;
+        int num = 0;
         while (!validDestination) {
+            System.out.println("Enter passenger destination ('done' if finished): ");
             String input = scanner.nextLine();
             try {
                 destination = Integer.parseInt(input);
-                if (direction.equals("up") && destination < currentFloor) {
-                    System.out.println("Invalid destination! Destination must be higher than or equal to current floor.");
-                } else if (direction.equals("down") && destination > currentFloor) {
-                    System.out.println("Invalid destination! Destination must be lower than or equal to current floor.");
-                } else if (destination <= 0 || destination > maxFloors) {
-                    System.out.println("Invalid destination! Please enter a number between 1 and " + maxFloors + ":");
+                if(destination <= 0){
+                    System.out.println("Please input a value between 1 to " + maxFloors + ":");
+                } else if(destination > maxFloors) {
+                    System.out.println("Please input a value between 1 to " + maxFloors + ":");
                 } else {
-                    validDestination = true;
+                    elevator.setPassengerDestinations(destination,num);
+                    num++;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input! Please enter a valid number.");
+                if(input.toLowerCase().equals("done")){
+                    validDestination = true;
+                } else {
+                    System.out.println("Invalid input! Please enter a valid number.");
+                }
             }
         }
-        elevator.setDirection(direction);
-        elevator.setPassengerDestinations(destination);
+        int[] highest = new int[num];
+        int[] lowest = new int[num];
+        int num2 = 0;
+        int num3 = 0;
+        for (int i = 0; i < highest.length; i++) {
+            if(currentFloor <= elevator.getPassengerDestinations(i)){
+                highest[num2] = elevator.getPassengerDestinations(i);
+                num2++;
+            } else if(currentFloor >= elevator.getPassengerDestinations(i)){
+                lowest[num3] = elevator.getPassengerDestinations(i);
+                num3++;
+            }
+        }
+        for (int i = 0; i < num2; i++) {
+            for (int j = i + 1; j < num2; j++) {
+                if (highest[i] > highest[j]) {
+                    int temp = highest[i];
+                    highest[i] = highest[j];
+                    highest[j] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < num3; i++) {
+            for (int j = i + 1; j < num3; j++) {
+                if (lowest[i] < lowest[j]) {
+                    int temp = lowest[i];
+                    lowest[i] = lowest[j];
+                    lowest[j] = temp;
+                }
+            }
+        }
+        if(direction.equals("up")){
+            System.out.println("Floors the elevator would go through:");
+            for (int i = 0; i < num2; i++) {
 
-        System.out.println("Floors the elevator would go through:");
-        if (elevator.getCurrentFloor() < destination) {
-            for (int floor = elevator.getCurrentFloor(); floor <= destination; floor++) {
-                System.out.print(floor + " ");
+                System.out.print(highest[i] + " ");
+            }
+            for (int i = 0; i < num3; i++) {
+                System.out.print(lowest[i] + " ");
             }
         } else {
-            for (int floor = elevator.getCurrentFloor(); floor >= destination; floor--) {
-                System.out.print(floor + " ");
+            System.out.println("Floors the elevator would go through:");
+            for (int i = 0; i < num3; i++) {
+                if(lowest[i] == currentFloor){
+                    i++;
+                }
+                System.out.print(lowest[i] + " ");
+            }
+            for (int i = 0; i < num2; i++) {
+                System.out.print(highest[i] + " ");
             }
         }
     }

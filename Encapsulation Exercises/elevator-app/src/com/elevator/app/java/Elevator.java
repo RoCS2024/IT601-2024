@@ -5,15 +5,8 @@ public class Elevator {
     private int currentFloor;
     private String direction;
     private boolean working;
-    private int passengerDestinations;
+    private int[] passengerDestinations = new int[10];
 
-    public Elevator(int maxFloors, int currentFloor, String direction, boolean working, int passengerDestinations) {
-        this.maxFloors = maxFloors;
-        this.currentFloor = currentFloor;
-        this.direction = direction;
-        this.working = working;
-        this.passengerDestinations = passengerDestinations;
-    }
 
     public Elevator() {
 
@@ -51,12 +44,12 @@ public class Elevator {
         this.working = working;
     }
 
-    public int getPassengerDestinations() {
-        return passengerDestinations;
+    public int getPassengerDestinations(int num) {
+        int passengerDestination = this.passengerDestinations[num];
+        return passengerDestination;
     }
-
-    public void setPassengerDestinations(int passengerDestinations) {
-        this.passengerDestinations = passengerDestinations;
+    public void setPassengerDestinations(int passengerDestination, int num) {
+        this.passengerDestinations[num] = passengerDestination;
     }
 }
 
