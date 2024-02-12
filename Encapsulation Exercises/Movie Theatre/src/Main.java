@@ -31,8 +31,12 @@ public class Main {
             if (numberOfViewersToAdmit <= 0) {
                 continueAdmitting = false;
             } else {
-                for (int i = 0; i < numberOfViewersToAdmit; i++) {
-                    theatre.admitViewer();
+                int remainingCapacity = theatre.getCapacity() - theatre.numberOfViewers;
+                if (numberOfViewersToAdmit <= remainingCapacity) {
+                    theatre.setNumberOfViewers(theatre.numberOfViewers + numberOfViewersToAdmit);
+                    System.out.println("Viewers admitted. Remaining seats: " + remainingCapacity);
+                } else {
+                    System.out.println("Sorry, the theatre is full. Cannot admit more viewers.");
                 }
             }
         }

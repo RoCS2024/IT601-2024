@@ -4,7 +4,7 @@ public class MovieTheatre {
     private String movieTitle;
     private int capacity;
     private double ticketPrice;
-    private int numberOfViewers;
+    int numberOfViewers;
 
     public MovieTheatre(String movieTitle, int capacity, double ticketPrice) {
         this.movieTitle = movieTitle;
@@ -17,13 +17,12 @@ public class MovieTheatre {
         System.out.println("Now playing: " + movieTitle);
     }
 
-    public void admitViewer() {
-        if (numberOfViewers < capacity) {
-            numberOfViewers++;
-            System.out.println("Viewer admitted. Remaining seats: " + (capacity - numberOfViewers));
-        } else {
-            System.out.println("Sorry, the theatre is full. Cannot admit more viewers.");
-        }
+    public void setNumberOfViewers(int numberOfViewers) {
+        this.numberOfViewers = numberOfViewers;
+    }
+
+    public int getCapacity() {
+        return capacity;
     }
 
     public double calculateRevenue() {
