@@ -2,26 +2,26 @@ package PublicVehicleFares;
 
 public class PublicVehicle {
         private int distance;
-        private int fare;
 
-        public PublicVehicle(){
-        }
-
-        public PublicVehicle(int distance, int fare){
+        public PublicVehicle(int distance){
             this.distance = distance;
-            this.fare = fare;
+
         }
 
-        public void setDistance(int distance){
+
+
+    public void setDistance(int distance){
             this.distance = distance;
         }
-        public int getDistance() {
-            return distance;
-        }
-        public void setFare(int fare) {
-            this.fare = fare;
-        }
-        public int getFare() {
-            return fare;
+        public int getDistance() {return distance;}
+
+        public double calculateFare(){
+            if (distance <= 5) {
+                return 9.0;
+            } else {
+                int extraKilometers = distance - 5;
+                double fare = 9 + extraKilometers;
+                return fare;
+            }
         }
 }
