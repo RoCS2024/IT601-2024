@@ -18,23 +18,15 @@ public class MusicPlayer {
     }
 
     public void removeSong(String title) {
-        if (playlist.remove(title)) {
-            if (currentSong != null && currentSong.equalsIgnoreCase(title)) {
-                currentSong = null; // Reset current song if the removed song was the current one
-            }
-            System.out.println("Song removed successfully.");
-        } else {
-            System.out.println("Song '" + title + "' not found in the playlist.");
+        playlist.remove(title);
+        if (currentSong != null && currentSong.equalsIgnoreCase(title)) {
+            currentSong = null; // Reset current song if the removed song was the current one
         }
     }
 
     public void playSong(String title) {
-        if (playlist.contains(title)) {
-            currentSong = title;
-            System.out.println("Playing: " + currentSong);
-        } else {
-            System.out.println("Song '" + title + "' not found in the playlist.");
-        }
+        currentSong = title;
+        System.out.println("Playing: " + currentSong);
     }
 
     public void displayPlaylist() {
