@@ -7,17 +7,12 @@ public class Main {
         System.out.print("Enter the movie title: ");
         String movieTitle = scanner.nextLine();
 
-        int capacity;
-        do {
-            System.out.print("Enter the capacity of the theatre: ");
-            capacity = MovieTheatre.getValidIntInput(scanner);
-        } while (capacity <= 0);
 
-        double ticketPrice;
-        do {
-            System.out.print("Enter the ticket price: ₱");
-            ticketPrice = MovieTheatre.getValidDoubleInput(scanner);
-        } while (ticketPrice <= 0.0);
+        System.out.print("Enter the capacity of the theatre: ");
+        int capacity = getValidIntInput(scanner);
+
+        System.out.print("Enter the ticket price: ₱");
+        double ticketPrice = getValidDoubleInput(scanner);
 
         MovieTheatre theatre = new MovieTheatre(movieTitle, capacity, ticketPrice);
 
@@ -26,7 +21,7 @@ public class Main {
         boolean continueAdmitting = true;
         while (continueAdmitting) {
             System.out.print("Enter the number of viewers to admit (enter a negative value or 0 to start the movie): ");
-            int numberOfViewersToAdmit = MovieTheatre.getValidIntInput(scanner);
+            int numberOfViewersToAdmit = getValidIntInput(scanner);
 
             if (numberOfViewersToAdmit <= 0) {
                 continueAdmitting = false;
@@ -34,6 +29,7 @@ public class Main {
                 int remainingCapacity = theatre.getCapacity() - theatre.numberOfViewers;
                 if (numberOfViewersToAdmit <= remainingCapacity) {
                     theatre.setNumberOfViewers(theatre.numberOfViewers + numberOfViewersToAdmit);
+                    remainingCapacity -= numberOfViewersToAdmit;
                     System.out.println("Viewers admitted. Remaining seats: " + remainingCapacity);
                 } else {
                     System.out.println("Sorry, the theatre is full. Cannot admit more viewers.");
@@ -45,5 +41,21 @@ public class Main {
         System.out.println("Total revenue for the show: ₱" + revenue);
 
         scanner.close();
+    }
+
+    private static int getValidIntInput(Scanner scanner) {
+        while (!scanner.hasNextInt()) {
+            System.out.print("Invalid input. Please enter a valid integer: ");
+            scanner.next();
+        }
+        return scanner.nextInt();
+    }
+
+    private static double getValidDoubleInput(Scanner scanner) {
+        while (!scanner.hasNextDouble()) {
+            System.out.print("Invalid input. Please enter a valid number: ₱");
+            scanner.next();
+        }
+        return scanner.nextDouble();
     }
 }

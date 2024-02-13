@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class MovieTheatre {
     private String movieTitle;
     private int capacity;
@@ -27,21 +25,5 @@ public class MovieTheatre {
 
     public double calculateRevenue() {
         return numberOfViewers * ticketPrice;
-    }
-
-    public static int getValidIntInput(Scanner scanner) {
-        while (!scanner.hasNextInt()) {
-            System.out.print("Invalid input. Please enter a valid integer: ");
-            scanner.next();
-        }
-        return scanner.nextInt();
-    }
-
-    public static double getValidDoubleInput(Scanner scanner) {
-        while (!scanner.hasNextDouble()) {
-            System.out.print("Invalid input. Please enter a valid number: ₱");
-            scanner.next();
-        }
-        return scanner.nextDouble();
     }
 }
