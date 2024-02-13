@@ -1,0 +1,59 @@
+Abstraction Exercises Part 1.
+
+Instructions:
+1. select the activity number you wanted to be assigned to you. 
+2. create an application using intellij idea IDE
+3. the application should have a text-based interface in Main class in order to test and run the application
+4. apply abstraction principle
+5. apply static members if necessary
+6. create build tasks using ant
+7. implement input validations
+8. codes shall be checked in to the IT601-2024/Abstraction Exercises Part 1 folder of the repo.
+9. codes shall be for code review on or before February 17, 2024 at 8:00 pm
+
+1. Create a Circle class that can compute the area and circumference of an instance of a circle. The class should be able to create a circle instance either by providing the radius or diameter of the circle.Do not use the Math built in class. - Kyle
+
+2. Write an application that does an inventory of t-shirts under one brand. The t-shirts have different sizes, colors and prices. The app should be able to sell these t-shirts from an initial inventory count of 100 on hand items. The app should also be able to display the current sales and remaining items of unsold items. - Joven
+
+3. Create a PublicVehicle class that computes the fare of a passenger depending on the distance covered by the passenger's travel. The first 5 kilometer travelled amounts to 9.00 while an additional cost of 1.50 is given per exceeding kilometer. -Richard
+
+4. Write a CreditCard class that can have many credit cards (principal and supplementary cards) all of which share the same credit limit. Credit cards have account number, owner's name and cvv and expiration date. The class shall be utilized in an text-based interface capable of paying bills using the cards and settling the credit card balance. - Conrad
+
+5. Write a BankAccount class that can accomodate services such as withdraw and deposit. The bank account can be shared with other people. - Ericka
+
+6. Create a class named Cylinder with two attributes – radius and height. Also, define a method that returns the volume of the cylinder. - Ram
+
+7. Design a class named Player that can be used in a shooting game. - Justine
+- The player has experience, level, hitpoints and attack points attributes. 
+- Experience increases by 10 when a player kills an enemy. 
+- When experience reaches 100 points, the player levels up. 
+- An increase in level means the player gets +3 attack points and +5 hitpoints.
+- Whenever a player receives a hit, its hitpoints get a deduction of 10 points. 
+- If a player has zero hitpoints, it dies and the game is over.
+- When a player acquire foods, hitpoints increases 20 points. 
+- All enemies have 30 hitpoints each and spawns one after the other.
+- The game ends when the player decided to quit.
+
+8. Create a class named Enemy that can be used in a shooting game same in Problem 7. - Zhaira
+- The enemy has hitpoints and attack points. 
+- Whenever a enemy receives a hit, its hitpoints get a deduction of 10 points. 
+- The game ends when the player decided to quit.
+
+9. Create a HotelRoom class that can be booked and/or cancelled reservations (no reservation date and time needed) and calculates the amount the client needs to pay considering that a whole day of stay in the room costs 1250 Php per peron. - Harold
+
+10. Create a TextBox class that has value, enabled and length attributes. The TextBox class shall have maximum length set to be the same to all the instances. - Steven
+
+11. Design an application that uses a EmailTextBox that has attributes such as value, enabled and length. It should have a static field that contains a regex that all instances of the EmailTexBox can use to validate the email address input. - Vince
+
+12. Write an application that uses PasswordBox -- this is a TextBox that can accept user inputs and mask the inputs with a specific character. This PasswordBox has attributes like value, shown, and length. Also it uses a field that indicates the character to be used when masking the input of the users. All instance of the PasswordBox must share the same character mask. - July
+
+13. Create a Rectangle class that can compute the area and perimeter of an instance of a rectangle. All the instances of the rectangle shall adhere to a single unit of measurement system which can be chosen from meter, inch or feet. Therefore, when computing for the area and perimeter, it shall use the same unit of measurement. - Aiah
+
+14. Create a Chat class that contains fields like name of sender and recipient, list of messages and status (active or not). All the instance of the app shall have a list of banned words that are forbidden to be sent in the Chat. - Kyla
+
+15. Create a MovieTheatre class that can accomodate viewers on a certain capacity, identify what movie is currently being played, and can calculate how much the movie has made for a single show. All instances of the class shall only show the same movie at the same time and contribute to the gross profit for that movie. - Joshua
+
+16. Write a MusicPlayer class that can contain a static playlist of songs (using an arraylist), can add or remove a song from the playlist and can play a song in the playlist. - Kate
+ 
+17. Create LineSegment class that has two points with coordinates x1, y1, x2, and y2. The class can compute for the slope of any of its instance as well as the distance between the two points. The class should have a boolean static field "starsWithOrigin", which when set to true, sets the coordinates of the first point of all the instances of the class to (0, 0). - Roselle
+
