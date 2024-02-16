@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project name="Ant Test Project" default="song">
+    <property name="Student Name" value="Kate Ann Amulong"/>
+    <property name="dst.dir" value="out"/>
+    <property name="source" value="src"/>
+    <property file="build.properties"/>
+    <property name="build.dir" value="target"/>
+    <property name="doc.dir" value="doc"/>
+
+    <target name="song">
+        <echo> This is for problem 16 documentation which is Write a MusicPlayer class that can contain a static playlist of songs (using an arraylist), can add or remove a song from the playlist and can play a song in the playlist.</echo>
+    </target>
+
+    <target name="copy-files">
+        <copy todir="${dst.dir}">
+            <fileset dir="">
+            <patternset refid="java.files.without.text.files"/>
+            <include name="**/*.docx"/>
+        </fileset>
+        </copy>
+    </target>
+
+    <patternset id="java.files.without.text.files">
+        <include name="**/*.java"/>
+        <exclude name="**/**.txt"/>
+    </patternset>
+
+    <target name="build">
+        <mkdir dir="${build.dir}"/>
+        <javac includeantruntime="false" destdir="${build.dir}" source="1.8" target="1.8">
+            <src path="${source}"/>
+        </javac>
+    </target>
+
+    <target name="generate-javadoc">
+        <javadoc packagenames="com.ant.test.project.*" sourcepath="${source}" destdir="${doc.dir}" version="${version}" windowtitle="Test ANT Documentation">
+            <fileset dir="."></fileset>
+            <doctitle><![CDATA[= Test Documentation =]]></doctitle>
+            <bottom>
+                <![CDATA[Copyright © ${copyright.year}. All Rights Reserved.]]>
+            </bottom>
+        </javadoc>
+        <echo message="java doc has been generated!" />
+    </target>
+
+    <target name="build-jar" depends="build">
+        <jar destfile="${dst.dir}/artifact/"
+             basedir="${build.dir}"
+        />
+    </target>
+</project>
