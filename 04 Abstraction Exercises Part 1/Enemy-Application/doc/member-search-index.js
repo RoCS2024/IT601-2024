@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.shooting.game.enemy","c":"Enemy","l":"Enemy(int, int)","u":"%3Cinit%3E(int,int)"},{"p":"<Unnamed>","c":"Main","l":"Main()","u":"%3Cinit%3E()"},{"p":"<Unnamed>","c":"Main","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"com.shooting.game.enemy","c":"Enemy","l":"receiveHit()"}];updateSearchResults();
