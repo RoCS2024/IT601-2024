@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<project name="TextBox" default="compile">
+
+    <target name="compile">
+        <mkdir dir="bin"/>
+        <javac srcdir="src" destdir="bin"/>
+    </target>
+
+    <target name="run" depends="compile" description="Run the Main class">
+        <java classname="Main" classpath="bin"/>
+    </target>
+
+</project>
