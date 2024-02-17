@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project name="Abstraction Exercise Problem 1" default="Problem1">
+    <property name = "circle" value = "Kyle Matalog"/>
+    <property file = "build.properties"/>
+    <target name="Problem1">
+        <echo> Creating a Circle class that can compute the area and circumference of an instance</echo>
+
+    </target>
+</project>
