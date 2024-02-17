@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<project name="Abstraction Exercise" default="Problem13">
+    <property name = "student" value = "Aiah Nadine Delos Reyes"/>
+    <property file = "build.properties"/>
+    <target name="Problem13">
+        <echo> Create a Rectangle class that can compute the area and perimeter of an instance of a rectangle.
+            All the instances of the rectangle shall adhere to a single unit of measurement system which can be
+            chosen from meter, inch or feet. Therefore, when computing for the area and perimeter, it shall use
+            the same unit of measurement.</echo>
+
+        <echo>By: ${student}</echo>
+    </target>
+</project>
