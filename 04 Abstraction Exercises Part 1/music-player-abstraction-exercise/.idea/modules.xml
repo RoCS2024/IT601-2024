@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/abstraction-music-player-application.iml" filepath="$PROJECT_DIR$/abstraction-music-player-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/music-player-abstraction-exercise.iml" filepath="$PROJECT_DIR$/music-player-abstraction-exercise.iml" />
     </modules>
   </component>
 </project>

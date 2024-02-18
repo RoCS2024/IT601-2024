@@ -14,9 +14,9 @@
     <target name="copy-files">
         <copy todir="${dst.dir}">
             <fileset dir="">
-            <patternset refid="java.files.without.text.files"/>
-            <include name="**/*.docx"/>
-        </fileset>
+                <patternset refid="java.files.without.text.files"/>
+                <include name="**/*.docx"/>
+            </fileset>
         </copy>
     </target>
 
