@@ -2,6 +2,8 @@ package com.project.martinez;
 
 import java.util.Scanner;
 
+import static com.project.martinez.PublicVehicle.fareComputation;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -22,13 +24,6 @@ public class Main {
         }
     }
 
-    public static void fareComputation (PublicVehicle vehicle, double distance) {
-        if (distance <= 5) {
-            vehicle.setFare(9.0);
-        } else {
-            vehicle.setFare(9.0 + (distance - 5) * 1.5);
-        }
-    }
     private static double getValidInput(Scanner scanner) {
         while (!scanner.hasNextDouble()) {
             System.out.print("Invalid input. Please enter a valid distance: ");
