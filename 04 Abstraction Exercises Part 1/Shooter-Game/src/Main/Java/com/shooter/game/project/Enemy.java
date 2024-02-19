@@ -1,21 +1,21 @@
 package com.shooter.game.project;
 
 public class Enemy {
-    private int HP;
+    private int health;
 
     public Enemy() {
-        HP = 10;
+        health = 20;
     }
 
     public int getHP() {
-        return HP;
+        return health;
     }
     public void takeDamage(int damage) {
-        HP -= damage;
-        if (HP <= 0) {
+        health -= damage;
+        if (health <= 0) {
             System.out.println("Enemy killed!");
         } else {
-            System.out.println("Enemy's health: " + HP);
+            System.out.println("Enemy's health: " + health);
         }
     }
 }

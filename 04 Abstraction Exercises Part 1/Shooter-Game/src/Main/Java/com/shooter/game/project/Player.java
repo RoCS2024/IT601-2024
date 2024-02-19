@@ -3,14 +3,14 @@ package com.shooter.game.project;
 public class Player {
     private int level;
     private int experience;
-    private int AP;
-    private int HP;
+    private int attackdamage;
+    private int health;
 
     public Player() {
         level = 1;
         experience = 0;
-        AP = 10;
-        HP = 50;
+        attackdamage = 10;
+        health = 50;
     }
 
     public int getLevel() {
@@ -22,11 +22,11 @@ public class Player {
     }
 
     public int getAP() {
-        return AP;
+        return attackdamage;
     }
 
     public int getHP() {
-        return HP;
+        return health;
     }
 
     private void levelUp() {
@@ -34,9 +34,9 @@ public class Player {
             System.out.println("You've LEVEL UP!");
             level++;
             experience -= 100;
-            AP += 3;
-            HP += 5;
-            System.out.println("Your initial stats: HP - " + HP + ", AP - " + AP + ", Level - " + level + ", Experience - " + experience);
+            attackdamage += 3;
+            health += 5;
+            System.out.println("Your initial stats: HP - " + health + ", AP - " + attackdamage + ", Level - " + level + ", Experience - " + experience);
         }
     }
 
@@ -46,18 +46,18 @@ public class Player {
     }
 
     public void Attack(Enemy enemy) {
-        enemy.takeDamage(AP);
+        enemy.takeDamage(attackdamage);
     }
 
     public void takeDamage(int damage) {
-        HP -= damage;
-        if (HP <= 0) {
+        health -= damage;
+        if (health <= 0) {
             System.out.println("You died. Game over!");
             System.exit(0);
         }
     }
 
     public void acquireFood() {
-        HP += 20;
+        health += 20;
     }
 }
