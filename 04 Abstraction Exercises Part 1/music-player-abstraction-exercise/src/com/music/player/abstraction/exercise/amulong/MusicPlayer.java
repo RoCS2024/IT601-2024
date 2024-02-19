@@ -28,10 +28,6 @@ public class MusicPlayer {
         playSong(songNumber, this.playlist, "BLINK");
     }
 
-    public void playSong2(int songNumber) {
-        playSong(songNumber, this.playlist, "BABY MONSTER");
-    }
-
     private void playSong(int songNumber, List<String> playlist, String playlistName) {
         if (songNumber >= 1 && songNumber <= playlist.size()) {
             System.out.println("Playing from " + playlistName + ": " + playlist.get(songNumber - 1));
