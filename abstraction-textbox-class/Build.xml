@@ -1,13 +1,9 @@
 <?xml version="1.0"?>
-<project name="TextBox" default="compile">
-
-    <target name="compile">
-        <mkdir dir="bin"/>
-        <javac srcdir="src" destdir="bin"/>
+<project name="TextBox" default="info">
+    <property name = "student" value = "Steven Rabacal"/>
+    <property file = "build.properties"/>
+    <target name="info">
+        <echo> Steven Rabacal </echo>
+        <echo> Abstraction Exercise </echo>
     </target>
-
-    <target name="run" depends="compile" description="Run the Main class">
-        <java classname="Main" classpath="bin"/>
-    </target>
-
 </project>

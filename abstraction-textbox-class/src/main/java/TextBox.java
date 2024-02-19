@@ -3,7 +3,11 @@ package main.java;
 public class TextBox {
     private String value;
     private boolean enabled;
-    private static int maxLength = 15;
+    int maxLength = 15;
+
+    public TextBox() {
+    }
+
     public TextBox(String value, boolean enabled) {
         this.value = value;
         this.enabled = enabled;
@@ -25,11 +29,11 @@ public class TextBox {
         this.enabled = enabled;
     }
 
-    public static int getMaxLength() {
+    public int getMaxLength() {
         return maxLength;
     }
 
-    public static void setMaxLength(int maxLength) {
-        TextBox.maxLength = maxLength;
+    public void setMaxLength(int maxLength) {
+        this.maxLength = maxLength;
     }
 }
