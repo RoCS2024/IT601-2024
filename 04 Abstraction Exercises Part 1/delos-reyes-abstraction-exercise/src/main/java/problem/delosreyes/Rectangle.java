@@ -3,7 +3,7 @@ package main.java.problem.delosreyes;
 public class Rectangle {
     private float length;
     private float width;
-    private String unitOfMeasurement;
+    private static String unitOfMeasurement;
 
     public Rectangle() {
     }
@@ -16,9 +16,6 @@ public class Rectangle {
         this.width = width;
     }
 
-    public void setUnitOfMeasurement(String unitOfMeasurement) {
-        this.unitOfMeasurement = unitOfMeasurement;
-    }
 
     public float calculateArea() {
         return length * width;
@@ -28,7 +25,11 @@ public class Rectangle {
         return 2 * (length + width);
     }
 
-    public String getUnitOfMeasurement() {
+    public static String getUnitOfMeasurement() {
         return unitOfMeasurement;
+    }
+
+    public static void setUnitOfMeasurement(String unit) {
+        unitOfMeasurement = unit;
     }
 }
