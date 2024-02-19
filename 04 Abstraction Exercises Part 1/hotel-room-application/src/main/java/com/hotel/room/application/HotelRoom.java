@@ -10,38 +10,29 @@ public class HotelRoom {
      * This part are the Fields
      * */
 
-    private int NumOfAdults;
 
-    private int NumOfChildren;
+    private int NumOfGuest;
 
     private int NumOfDays;
 
-    public static int MaxNumOfAdult=2;
-
-    public static int MaxNumOfChildren=1;
-
     public static double ChargePerPerson=1250.0;
+
+    public  static double MaxOfGuest=10;
 
     /**
      * This part is the Parameterized Constructor
      * */
 
-    public HotelRoom (int NumOfAdults, int NumOfChildren, int NumOfDays) {
-        this.NumOfAdults = NumOfAdults;
-        this.NumOfChildren = NumOfChildren;
+    public HotelRoom (int NumOfGuest,  int NumOfDays) {
+        this.NumOfGuest = NumOfGuest;
         this.NumOfDays = NumOfDays;
     }
-
-    /**
-     * This method gets the Sum of the Guest
-     * */
-    private int getSumOfGuest() {return this.NumOfAdults + this.NumOfChildren; }
 
     /**
      * This method gets the Total Charge
      * */
     public double getTotalCharge() {
-        int TotalGuest = getSumOfGuest();
+        int TotalGuest = this.NumOfGuest;
         int TotalDays = this.NumOfDays;
         double TotalCharge = (TotalGuest * ChargePerPerson * TotalDays);
         return TotalCharge;

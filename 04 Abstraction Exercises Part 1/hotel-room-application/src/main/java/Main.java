@@ -7,7 +7,7 @@ import java.util.Scanner;
  * */
 public class Main {
     public static void main(String[] args){
-        int NumOfAdults, NumOfChildren, NumOfDays;
+        int NumOfGuest, NumOfDays;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to Hotel De Luna!");
@@ -23,24 +23,17 @@ public class Main {
 
             switch (option) {
                 case 1: {
-                    System.out.println("Enter Number of Adults: ");
-                    NumOfAdults = scanner.nextInt();
-                    if (NumOfAdults > HotelRoom.MaxNumOfAdult){
-                        System.out.println("Invalid Input. Maximum number of Adult is 2");
-                        break;
-                    }
-
-                    System.out.println("Enter Number of Children: ");
-                    NumOfChildren = scanner.nextInt();
-                    if (NumOfChildren > HotelRoom.MaxNumOfChildren){
-                        System.out.println("Invalid Input. Maximum number of Children is 1");
+                    System.out.println("Enter Number of Guest: ");
+                    NumOfGuest = scanner.nextInt();
+                    if (NumOfGuest > HotelRoom.MaxOfGuest){
+                        System.out.println("Invalid Input. Maximum number of Guest is 10");
                         break;
                     }
 
                     System.out.println("Enter Number of Days: ");
                     NumOfDays = scanner.nextInt();
 
-                    HotelRoom room = new HotelRoom(NumOfAdults, NumOfChildren, NumOfDays);
+                    HotelRoom room = new HotelRoom(NumOfGuest, NumOfDays);
                     double totalCharge = room.getTotalCharge();
                     System.out.println("Total Charge: " + totalCharge);
                     System.out.println("Room Reserved");
