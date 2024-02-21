@@ -3,7 +3,7 @@ package main.java.problem.delosreyes;
 public class Rectangle {
     private float length;
     private float width;
-    private static String unitOfMeasurement;
+    public static String unitOfMeasurement;
 
     public Rectangle() {
     }
@@ -29,7 +29,7 @@ public class Rectangle {
         return unitOfMeasurement;
     }
 
-    public static void setUnitOfMeasurement(String unit) {
+    public void setUnitOfMeasurement(String unit) {
         unitOfMeasurement = unit;
     }
 }
