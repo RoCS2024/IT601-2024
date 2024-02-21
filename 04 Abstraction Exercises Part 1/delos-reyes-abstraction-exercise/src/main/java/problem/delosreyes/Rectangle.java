@@ -24,12 +24,4 @@ public class Rectangle {
     public float calculatePerimeter() {
         return 2 * (length + width);
     }
-
-    public static String getUnitOfMeasurement() {
-        return unitOfMeasurement;
-    }
-
-    public void setUnitOfMeasurement(String unit) {
-        unitOfMeasurement = unit;
-    }
 }

@@ -23,7 +23,7 @@ public class Main {
             if (choice == 1) {
                 System.out.println("Enter unit of measurement: ");
                 String unit = sc.next();
-                newRectangle.setUnitOfMeasurement(unit);
+                Rectangle.unitOfMeasurement = unit;
             } else if (choice == 2) {
                 System.out.println("Enter length of rectangle: ");
                 float length = sc.nextFloat();
@@ -41,8 +41,8 @@ public class Main {
                 }
                 newRectangle.setWidth(width);
 
-                System.out.println("Area of the Rectangle is: " + newRectangle.calculateArea() + " sq" + " " + newRectangle.getUnitOfMeasurement());
-                System.out.println("Perimeter of the Rectangle is: " + newRectangle.calculatePerimeter() + " " + newRectangle.getUnitOfMeasurement());
+                System.out.println("Area of the Rectangle is: " + newRectangle.calculateArea() + " sq" + " " + Rectangle.unitOfMeasurement);
+                System.out.println("Perimeter of the Rectangle is: " + newRectangle.calculatePerimeter() + " " + Rectangle.unitOfMeasurement);
             }
         } while (choice != 3);
     }
