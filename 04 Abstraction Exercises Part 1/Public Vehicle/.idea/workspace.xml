@@ -7,12 +7,6 @@
     <list default="true" id="6391f953-bff4-449e-baed-35007de29f45" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../Movie/Movie.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Movie/Theatre Movie/Movie.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public Vehicle.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +51,8 @@
       <workItem from="1708095323965" duration="2294000" />
       <workItem from="1708099233240" duration="861000" />
       <workItem from="1708169306253" duration="1134000" />
+      <workItem from="1708344950139" duration="1773000" />
+      <workItem from="1708519333634" duration="1920000" />
     </task>
     <servers />
   </component>
