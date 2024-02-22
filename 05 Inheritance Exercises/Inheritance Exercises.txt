@@ -1,0 +1,46 @@
+Inheritance Exercises.
+
+Instructions:
+1. select the activity number you wanted to be assigned to you. 
+2. create an application using intellij idea IDE
+3. the application should have a text-based interface in Main class in order to test and run the application
+4. apply inheritance principle
+5. create build tasks using ant
+6. write java documentation
+7. implement input validations
+8. codes shall be checked in to the IT601-2024/Inheritance Exercises folder of the repo.
+9. codes shall be for code review on or before February 23, 2024 at 8:00 pm
+
+1. Write a Java program that has a base class called Sorter which has a method called sort(). At the base implementation, the sort method sorts a string array list field in ascending order (alphabetically). Create another class named ExtendedSorter which is an extension of the Sorter base class and its sort method removes duplicate entries in the list and sort the contents of the list in ascending order as well. - Joven
+
+2. Create a class named DiskSechulingAlgorithm that has a method schedule(). By default the class implements the FCFS disk scheduling algorithm. Extend the base class into three derived classes such as SSTF, SCAN and CSAN to perfrom each scheduling algorithm. - Zhai
+
+3. Construct a class named Entity which is a base class of all abjects to be created in a. Shooting Game app. The entity can be extended to a Player and Enemy classes. The Player has experience, level, hitpoints and attack points attributes. While the Enemy has hitpoints and attack points only. - Justine
+
+4. Create a Java class named TextBox that has value, enabled and length attributes. TextBox can be extended to EmailTextBox that has attributes such as value, enabled and length. It should have a static field that contains a regex that all instances of the EmailTexBox can use to validate the email address input. PasswordTextBox can be created from TextBox such that it has attributes like value, enabled, shown, and length. Also it uses a field that indicates the character to be used when masking the input of the users. All instance of the PasswordBox must share the same character mask. - Steven
+
+5. Write a Java app that has a class Person. This Person class can have basic fields such as first name, middle name, last name, address and contact number. A Student class can be extended from Person class which can have additional properties such as enrolled, date of enrolment, student number, course and year level. Meanwhile, another class can be extended from Person class which is Employee. Employee class can have fields such as employee number, employment date, department and salary.  - Ericka
+
+6. Write an application that has a BankAccount class which simulates a bank account. This can be extended to a subclass named DepositAccount that can accomodate services such as withdraw and deposit. Furthermore, write a CreditAccount class that is extended from the BankAccount class as well. Credit account/cards have account number, owner's name and cvv and expiration date. The app shall also be capable of online payment wherein the same account holder of the DebitAccount can pay the outstanding payment in the CreditAccount. -Aiah
+
+7. Create an application that has a class called Shape and a method called getArea(). Create a subclasses called Triangle and Rectangle that uses the same method. -Kyle
+
+8. Create a PublicVehicle class that can compute the fare of a passenger depending on the distance covered by the passenger's travel. Also, create subclasses such as Taxi, Jeep and Bus that implements respective fare computation schemes. - July
+
+9. Create an application that has a MandatoryContribution class. This class calculates the mandatory contributions like Social Security, PAGIBIG and PhilHealth of a working employee based on his monthly salary. -Kate
+
+10. Create a Facility class that can accomodate visitors on a certain capacity, identify what event is currently being held, and can have an array list of dates of booked schedules. Some facilities include Auditorium, Gym and Laboratories and they all vary in cpacity. Write a text based interface that can reserve and cancel selected facility. - Ram
+
+11. Create a Chat class that contains fields like name of sender and recipient, list of messages and status (active or not). All the instance of the app shall have a list of banned words that are forbidden to be sent in the Chat. Also, a subclass PrivateChat can be derived from the base class where the name of the receipient shall be masked with an alias chosen by the sender. - Harold
+
+12. Write a class Point that has two attributes such as x and y. The class shall be able to compute the distance of the a point instance from another point instance by calling the method getDistanceFrom(Point p). This class can be extended futher to Point3D which has an additional attribute which is z. Point3D should also be capable of calculating an instance of the Point3D to another instance. - Kyla
+
+13. Create a class called Appliance which has wattage, price and warranty properties. Make another classes such as Television, Computer and Refrigerator that extend from the Appliance parent class. Each subclass must have its own implementations. Then a text based interface shall be created that will enable the users to compute for the total consumed electricity given a 35 pesos per kilowatt-hr cost of electricity. -Conrad
+
+14. Create a class called NumberSystem that has value property and convert(toNumberSystem) method. The default implementation of this class should be decimal number system. The convert(toNumberSystem) method converts the value to the specified number system by the toNumberSystem parameter. Adapt the NumberSystem as base class and extend subclasses such as BinaryNumberSystem and OctalNumberSystem, both of which are capable of converting from one number system to another. -Roselle
+
+15. Create a Cellphone class that has load, network, and model properties. This class can be loaded with prepaid loads and deducts load when a call or text is made to other networks. Furthermore, load is also consumed when there is data usage. The Cellphone class will be a base class for creating other types of phones like SmartPhones and AnalogPhone. Note that only SmartPhones consume data. -Vince
+
+16. Create a simple temperature converter hierarchy representing different temperature scales. The base class should be TemperatureConverter, and it should have common methods for converting temperatures between different scales. Implement subclasses for specific temperature scales such as CelsiusConverter, FahrenheitConverter, and KelvinConverter. Each subclass should have methods specific to that temperature scale. -Richard
+
+17. Create a simple restaurant hierarchy representing different types of restaurants. The base class should be Restaurant, and it should have common properties and methods for all restaurants. Implement subclasses for specific types of restaurants such as FastFoodRestaurant, FineDiningRestaurant, and CasualDiningRestaurant. Each subclass should have properties and methods specific to that type of restaurant. Implement a base class called Restaurant with common properties like name, location, and methods like open() and close(). Each subclass should have properties specific to that type of restaurant, such as menuItems for fast food restaurants, chef for fine dining restaurants, and seatingCapacity for casual dining restaurants. Lastly, Implement methods to display information about each restaurant, including its type, name, location, and any other relevant properties
