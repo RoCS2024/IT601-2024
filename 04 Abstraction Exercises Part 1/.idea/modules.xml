@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/04 Abstraction Exercises Part 1.iml" filepath="$PROJECT_DIR$/.idea/04 Abstraction Exercises Part 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Enemy-Application/Enemy-Application.iml" filepath="$PROJECT_DIR$/Enemy-Application/Enemy-Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/abstraction-line-segment-mariano/abstraction-line-segment-mariano.iml" filepath="$PROJECT_DIR$/abstraction-line-segment-mariano/abstraction-line-segment-mariano.iml" />
+      <module fileurl="file://$PROJECT_DIR$/delos-reyes-abstraction-exercise/delos-reyes-abstraction-exercise.iml" filepath="$PROJECT_DIR$/delos-reyes-abstraction-exercise/delos-reyes-abstraction-exercise.iml" />
+    </modules>
+  </component>
+</project>
