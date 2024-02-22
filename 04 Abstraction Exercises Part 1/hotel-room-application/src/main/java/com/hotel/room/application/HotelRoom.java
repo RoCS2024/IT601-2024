@@ -1,41 +1,45 @@
 package com.hotel.room.application;
 
-/**
- * This is the Hotel Room Class
- * */
-
 public class HotelRoom {
+    private int numOfGuest;
+    private int numOfDays;
+    private boolean isReserved;
 
-    /**
-     * This part are the Fields
-     * */
+    public static final double CHARGE_PER_PERSON = 1250.0;
+    public static final int MAX_GUEST = 10;
 
+    public HotelRoom(int numOfGuest, int numOfDays, boolean isReserved) {
+        this.numOfGuest = numOfGuest;
+        this.numOfDays = numOfDays;
+        this.isReserved = isReserved;
 
-    private int NumOfGuest;
-
-    private int NumOfDays;
-
-    public static double ChargePerPerson=1250.0;
-
-    public  static double MaxOfGuest=10;
-
-    /**
-     * This part is the Parameterized Constructor
-     * */
-
-    public HotelRoom (int NumOfGuest,  int NumOfDays) {
-        this.NumOfGuest = NumOfGuest;
-        this.NumOfDays = NumOfDays;
     }
 
-    /**
-     * This method gets the Total Charge
-     * */
-    public double getTotalCharge() {
-        int TotalGuest = this.NumOfGuest;
-        int TotalDays = this.NumOfDays;
-        double TotalCharge = (TotalGuest * ChargePerPerson * TotalDays);
-        return TotalCharge;
+    public int getNumOfGuest() {
+        return numOfGuest;
     }
 
+    public void setNumOfGuest(int numOfGuest) {
+        this.numOfGuest = numOfGuest;
+    }
+
+    public int getNumOfDays() {
+        return numOfDays;
+    }
+
+    public void setNumOfDays(int numOfDays) {
+        this.numOfDays = numOfDays;
+    }
+
+    public boolean isReserved() {
+        return isReserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        isReserved = reserved;
+    }
+
+    public double computeTotalCharge() {
+        return numOfGuest * CHARGE_PER_PERSON * numOfDays;
+    }
 }
