@@ -16,14 +16,6 @@ class LineSegment {
         this.y2 = y2;
     }
 
-    public double slope() { //double to show the exact value
-        if (x2 - x1 == 0) {
-            return Double.POSITIVE_INFINITY; // Vertical line, infinite slope
-        } else {
-            return (double) (y2 - y1) / (x2 - x1);
-        }
-    }
-
     public double distance() {
         return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)); //subtract then raise to the power of 2 then add both value then get the square root
     }

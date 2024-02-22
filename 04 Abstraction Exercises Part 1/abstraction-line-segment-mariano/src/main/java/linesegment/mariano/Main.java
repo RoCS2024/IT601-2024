@@ -15,7 +15,6 @@ public class Main {
         int y2 = scanner.nextInt();
 
         LineSegment line1 = new LineSegment(x1, y1, x2, y2);
-        System.out.println("Slope of line1: " + line1.slope());
         System.out.println("Distance between points of line1: " + line1.distance());
 
         // Setting startsWithOrigin to true
