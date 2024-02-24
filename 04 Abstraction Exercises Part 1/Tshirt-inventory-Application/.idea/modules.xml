@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Tshirt-Inventory-Application.iml" filepath="$PROJECT_DIR$/.idea/Tshirt-Inventory-Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tshirt-inventory-application.iml" filepath="$PROJECT_DIR$/.idea/tshirt-inventory-application.iml" />
     </modules>
   </component>
 </project>
