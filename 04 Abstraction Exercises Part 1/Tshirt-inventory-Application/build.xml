@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<project name="T-shirt Inventory Application" default="info">
+    <property name="destination.dir" value="out"/>
+    <property name="source" value="src"/>
+    <property name="java-file" value="file-no-txt"/>
+    <property name="source" value="src"/>
+    <property name="build.dir" value="target"/>
+    <property name="doc.dir" value="doc"/>
+
+
+    <target name="info">
+        <echo>Hello Sir!</echo>
+    </target>
+
+    <target name="first" depends="info">
+        <echo>T-shirt Inventory</echo>
+    </target>
+
+    <target name="second" depends="first">
+        <echo> Buy Shirt Now! </echo>
+    </target>
+
+    <target name="copy-files">
+        <copy todir ="${destination.dir}">
+            <fileset dir="${source}"> </fileset>
+        </copy>
+    </target>
+
+    <target name="files-no-text">
+        <copy todir ="${java-file}">
+            <fileset dir="${source}">
+                <include name="**/*.java"/>
+                <exclude name="**/*.txt"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="build">
+        <mkdir dir="${build.dir}"/>
+        <javac includeantruntime="false" destdir="${build.dir}" source="1.8" target="1.8">
+            <src path="${source}"/>
+        </javac>
+    </target>
+
+    <target name="generate-java-doc">
+        <javadoc packagenames="com.tshirt.inventory.application*" sourcepath="${source}" destdir="${doc.dir}" version="${ant.java.version}" windowtitle="Test ANT Documentation">
+            <fileset dir="."></fileset>
+            <doctitle><![CDATA[= Test Documentation =]]></doctitle>
+            <bottom>
+                <![CDATA[Copyright © ${copyright.year}. All Rights Reserved.]]>
+            </bottom>
+        </javadoc>
+        <echo message="java doc has been generated!" />
+    </target>
+
+    <target name="build-jar" depends="build">
+        <jar destfile="${destination.dir}/artifact/"
+             basedir="${build.dir}"
+        />
+    </target>
+
+
+
+
+
+</project>
