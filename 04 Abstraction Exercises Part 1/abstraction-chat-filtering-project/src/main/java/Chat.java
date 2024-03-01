@@ -45,9 +45,9 @@ public class Chat {
     public void addMessage(String message) {
         if (!containsBannedWords(message)) {
             messages.add(message);
-            System.out.println("Message sent successfully.");
+            System.out.println("Message sent successfully..");
         } else {
-            System.out.println("Message contains banned words and cannot be sent.");
+            System.out.println("Message contains banned words and cannot be sent..");
         }
     }
 

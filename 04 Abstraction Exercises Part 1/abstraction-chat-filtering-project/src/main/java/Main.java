@@ -39,7 +39,7 @@ public class Main {
                             boolean containsBannedWords = chat.containsBannedWords(message);
 
                             if (containsBannedWords) {
-                                System.out.println("Message contains banned words and cannot be sent ");
+                                System.out.println("Message contains banned words and cannot be sent. ");
                             } else {
                                 chat.addMessage(message);
                             }
