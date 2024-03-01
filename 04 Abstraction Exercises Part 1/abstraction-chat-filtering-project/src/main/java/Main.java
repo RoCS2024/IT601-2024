@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.regex.*;
 
 public class Main {
 
@@ -16,37 +15,55 @@ public class Main {
 
         do {
             System.out.println("Choose from the options: ");
-            System.out.println("1. Status");
+            System.out.println("1. Your Status");
             System.out.println("2. Type message");
             System.out.println("0. Back");
-            option = scanner.nextInt();
+            option = readOption(scanner);
 
             switch (option) {
                 case 1:
-                    if (!chat.isRecipientOnline()) {
-                        System.out.println("Online");
-                        chat.turnRecipientOnline();
+                    chat.toggleSenderOnline(); // Toggle sender's online status
+                    if (chat.isSenderOnline()) {
+                        System.out.println("You are now online.");
                     } else {
-                        System.out.println("Offline");
+                        System.out.println("You are now offline.");
                     }
                     break;
                 case 2:
-                    scanner.nextLine();
-                    String message = selectMessage(scanner);
-
-                    boolean containsOffensiveWord = containsOffensiveWord(message);
-
-                    if (containsOffensiveWord) {
-                        System.out.println("Message is irrelevant. ");
+                    if (!chat.isSenderOnline()) {
+                        System.out.println("You are currently offline. Message cannot be sent.");
                     } else {
-                        chat.addMessage(message);
-                        System.out.println("Message sent successfully.");
+                        String message = selectMessage(scanner);
+
+                        if (message != null) {
+                            boolean containsBannedWords = chat.containsBannedWords(message);
+
+                            if (containsBannedWords) {
+                                System.out.println("Message contains banned words and cannot be sent. ");
+                            } else {
+                                chat.addMessage(message);
+                            }
+                        }
                     }
                     break;
             }
         } while (option != 0);
 
         scanner.close();
+    }
+
+    public static int readOption(Scanner scanner) {
+        int option;
+        do {
+            System.out.print("Enter your choice: ");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.next();
+            }
+            option = scanner.nextInt();
+        } while (option < 0 || option > 2);
+        scanner.nextLine();
+        return option;
     }
 
     public static String selectMessage(Scanner scanner) {
@@ -60,36 +77,28 @@ public class Main {
         int choice;
         do {
             System.out.print("Enter your choice: ");
-            choice = scanner.nextInt();
-            scanner.nextLine();
-        } while (choice < 1 || choice > 5);
-
-        if (choice == 5) {
-            String message;
-            do {
-                System.out.print("Type your message: ");
-                message = scanner.nextLine().trim();
-            } while (message.isEmpty());
-            return message;
-        } else {
-            switch (choice) {
-                case 1:
-                    return "Good morning!";
-                case 2:
-                    return "Hello! ";
-                case 3:
-                    return "Take care always.";
-                case 4:
-                    return "Congrats";
-                default:
+            while (!scanner.hasNextInt()) {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.next();
             }
-        }
-        return null;
-    }
+            choice = scanner.nextInt();
+        } while (choice < 1 || choice > 5);
+        scanner.nextLine();
 
-    private static boolean containsOffensiveWord(String message) {
-        Pattern pattern = Pattern.compile("\\b(fuck|shit|asshole|bitch|bullshit)\\b", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(message);
-        return matcher.find();
+        switch (choice) {
+            case 1:
+                return "Good morning!";
+            case 2:
+                return "Hello!";
+            case 3:
+                return "Take care always.";
+            case 4:
+                return "Congrats";
+            case 5:
+                System.out.print("Type your message: ");
+                return scanner.nextLine().trim();
+            default:
+                return null;
+        }
     }
 }
