@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<project name="Public Vehicle" default="info">
+    <property name = "student" value = "Richard Martinez"/>
+    <property file = "build.properties"/>
+    <target name="info">
+        <echo> Hello World Project </echo>
+        <echo> Richard Martinez </echo>
+        <echo> Abstraction Exercise Problem #3</echo>
+    </target>
+</project>
