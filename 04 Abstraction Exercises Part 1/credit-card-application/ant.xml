@@ -1,0 +1,16 @@
+<project name="CreditCardInterface" default="compile" basedir=".">
+    <property name="src.dir" value="src" />
+    <property name="build.dir" value="build" />
+
+    <target name="init">
+        <mkdir dir="${build.dir}" />
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" />
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="CreditCardInterface" classpath="${build.dir}" />
+    </target>
+</project>
