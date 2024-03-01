@@ -2,8 +2,24 @@ package com.tshirt.inventory.application;
 
 import java.util.ArrayList;
 
-
 class Inventory {
+
+    static class TShirt {
+        String size;
+        String color;
+        double price;
+
+        public TShirt(String size, String color, double price) {
+            this.size = size;
+            this.color = color;
+            this.price = price;
+        }
+
+        public void display() {
+            System.out.println("Size: " + size + ", Color: " + color + ", Price: " + price);
+        }
+    }
+
     private ArrayList<TShirt> tshirts;
     private int countOnHand;
 
