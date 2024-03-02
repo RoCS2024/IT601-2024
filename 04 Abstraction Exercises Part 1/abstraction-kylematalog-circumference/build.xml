@@ -1,0 +1,25 @@
+<project name="CircleCalculator" default="run" basedir=".">
+    <description>
+      Calculating Circle Properties.
+    </description>
+
+    <property name="src.dir" value="." />
+    <property name="build.dir" value="build" />
+    <property name="main-class" value="Main" />
+
+    <target name="init">
+        <mkdir dir="${build.dir}" />
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" />
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="${main-class}" classpath="${build.dir}" fork="true"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}" />
+    </target>
+</project>
