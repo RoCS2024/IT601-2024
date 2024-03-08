@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Cellphone" basedir="number16" default="build">
+
+    <!-- Properties -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="main-class" value="main.Main"/>
+
+    <!-- Compilation target -->
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false"/>
+    </target>
+
+    <!-- Build target -->
+    <target name="build" depends="compile">
+        <jar destfile="YourProjectName.jar" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- Clean target -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete file="YourProjectName.jar"/>
+    </target>
+
+    <!-- Main target -->
+    <target name="main" depends="build">
+        <java jar="YourProjectName.jar" fork="true"/>
+    </target>
+
+</project>
