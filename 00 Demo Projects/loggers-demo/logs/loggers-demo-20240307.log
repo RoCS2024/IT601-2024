@@ -1,0 +1,4 @@
+2024-03-07 18:38:19.761 [main] DEBUG loggers-demo-logs - Hello World!
+2024-03-07 18:42:30.768 [main] ERROR loggers-demo-logs - Error connecting to the database
+2024-03-07 18:46:12.744 [main] INFO  com.loggers.demo.data.connection.ConnectionHelper - Trying to connect to the database...
+2024-03-07 18:46:12.748 [main] ERROR loggers-demo-logs - Error connecting to the database
