@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="EmployeeManagement" basedir="." default="compile">
+
+    <property name="src.dir" location="src"/>
+    <property name="build.dir" location="build"/>
+    <property name="main.class" value="Main"/>
+
+    <path id="classpath">
+        <pathelement location="${build.dir}"/>
+    </path>
+
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false">
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="${main.class}" fork="true">
+            <classpath>
+                <pathelement location="${build.dir}"/>
+            </classpath>
+        </java>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+</project>
