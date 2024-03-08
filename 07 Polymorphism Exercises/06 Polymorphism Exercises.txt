@@ -1,0 +1,46 @@
+Polymorphism Exercises.
+
+Instructions:
+1. select the activity number you wanted to be assigned to you. 
+2. create an application using intellij idea IDE
+3. the application should have a text-based interface in Main class in order to test and run the application
+4. apply polymorphism principle
+5. create build tasks using ant
+6. write java documentation
+7. implement input validations
+8. codes shall be checked in to the IT601-2024/Polymorphism Exercises folder of the repo.
+9. codes shall be for code review on or before March 8, 2024 at 8:00 pm
+
+1. Create a Shape class with methods calculateArea() and displayInfo(). Implement subclasses for different shapes like Circle, Rectangle, and Triangle. - Aiah
+
+2. Design Employee class with attributes like name and salary. Create subclasses for different roles such as Manager, Developer, and SalesPerson. - Vince
+
+3. Implement a Vehicle class with methods start() and stop(). Create subclasses for various vehicles like Car, Motorcycle, and Truck. - Conrad
+
+4. Create a BankAccount class with methods for deposit, withdraw, and display balance. Implement subclasses for different account types like SavingsAccount and CheckingAccount. - Harold
+
+5. Develop a DrawingTool class with methods for drawing basic shapes. Implement subclasses for specific drawing tools like Pen, Pencil, and Eraser. - Ericka
+
+6. Implement an LibraryItem class with methods for checking in and checking out. Create subclasses for different types of items like Book and DVD. - Justine
+
+7. Design a Product class with methods for calculating price and displaying product information. Implement subclasses for different types of products. - Joven
+
+8. Create an AudioPlayer class with methods for playing, pausing, and stopping audio. Implement subclasses for different audio file types. - Steven
+
+9. Design a PayingCharacter class with methods for attacking and levelling up. Create subclasses for different types of characters like Warrior and Mage. - Roselle
+
+10. Create a Flight class with methods for booking and canceling flights. Implement subclasses for different types of flights. - Kyla
+
+11. Implement an Exercise class with methods for tracking and displaying workout data. Create subclasses for different types of exercises. - Zhaira
+
+12. Create a Java class named TextBox that has value, enabled and length attributes. Implement methods for subclasses that can be created under TextBox. - Kate
+
+13. Write a Java app that has a class Person. This Person class can have basic fields such as first name, middle name, last name, address and contact number. A Student class can be extended from Person class which can have additional properties such as enrolled, date of enrolment, student number, course and year level. Meanwhile, another class can be extended from Person class which is Employee. Employee class can have fields such as employee number, employment date, department and salary. - Steven
+
+14. Create an application that has a MandatoryContribution class. This class calculates the mandatory contributions like Social Security, PAGIBIG and PhilHealth of a working employee based on his monthly salary. - Richard
+
+15. Create a Facility class that can accomodate visitors on a certain capacity, identify what event is currently being held, and can have an array list of dates of booked schedules. Some facilities include Auditorium, Gym and Laboratories and they all vary in cpacity. Write a text based interface that can reserve and cancel selected facility. - Ram
+
+16. Create a Cellphone class that has load, network, and model properties. This class can be loaded with prepaid loads and deducts load when a call or text is made to other networks. Furthermore, load is also consumed when there is data usage. The Cellphone class will be a base class for creating other types of phones like SmartPhones and AnalogPhone. Note that only SmartPhones consume data. - Kyle
+
+17. Design a VirtualPet class with methods for feeding and playing. Implement subclasses for different virtual pets like Dog, Cat, and Bird. - Joshua
