@@ -1,0 +1,6 @@
+<project name="test ivy installation"
+         default="test" xmlns:ivy="antlib:org.apache.ivy.ant">
+    <target name="test" description="Test ivy installation">
+        <ivy:settings />
+    </target>
+</project>
