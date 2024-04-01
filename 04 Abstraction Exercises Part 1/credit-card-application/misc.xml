@@ -1,0 +1,5 @@
+<project name="Miscellaneous" default="clean" basedir=".">
+    <target name="clean">
+        <delete dir="build" />
+    </target>
+</project>
