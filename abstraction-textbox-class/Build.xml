@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project name="TextBox" default="info">
+    <property name = "student" value = "Steven Rabacal"/>
+    <property file = "build.properties"/>
+    <target name="info">
+        <echo> Steven Rabacal </echo>
+        <echo> Abstraction Exercise </echo>
+    </target>
+</project>
