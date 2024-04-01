@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<project name="Abstraction Line Segment" default="info">
+    <property name="author" value="Roselle"/>
+    <property file="build.properties"/>
+
+    <target name="info">
+        <echo>Hello Sir!- Welcome to Apache Ant!</echo>
+    </target>
+
+    <target name="hello" depends="info">
+        <echo>This is my Abstraction Line Segment Activity by ${author}:)</echo>
+        <echo>your co-author is ${co-author}</echo>
+    </target>
+</project>
