@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.virtual.pet"},{"l":"com.virtual.pet.bird"},{"l":"com.virtual.pet.cat"},{"l":"com.virtual.pet.dog"}];updateSearchResults();
